@@ -110,11 +110,6 @@ jobs:
             npm audit fix --force --audit-level=critical
             npm audit fix --force --audit-level=critical
             npm audit --audit-level=critical
-        # npm install --save-dev html-webpack-plugin@5.5.0
-            # npm update kind-of --depth 11
-            # npm update js-yaml --depth 4
-            # npm update ansi-regex --depth 7
-            # npm audit fix --force --audit-level=critical
 
   scan-backend:
     docker:
@@ -140,8 +135,8 @@ jobs:
       - run:
           name: install dependancies 
           command:  |
-              apk add --upgrade tar
-              apk add --upgrade gzip
+            sudo yum update
+            sudo yum install tar gzip
       - run:
           name: Ensure back-end infrastructure exists
           command: |
