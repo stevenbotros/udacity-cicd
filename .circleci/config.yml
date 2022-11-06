@@ -107,7 +107,10 @@ jobs:
           command: |
             cd frontend
             npm install
-            npm audit fix --force --audit-level=critical
+            npm install --save-dev html-webpack-plugin@5.5.0
+            npm update kind-of --depth 11
+            npm update js-yaml --depth 4
+            npm update ansi-regex --depth 7
             npm audit fix --force --audit-level=critical
             npm audit fix --force --audit-level=critical
             npm audit --audit-level=critical
