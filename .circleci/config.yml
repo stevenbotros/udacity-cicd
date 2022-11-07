@@ -132,10 +132,10 @@ jobs:
       - image: amazon/aws-cli
     steps:
       - checkout
-      # - run:
-      #     name: Install AWS CLI
-      #     command:
-      #       install_awscli
+      - run:
+          name: Install tar 
+          command:
+            install tar
 
       - run:
           name: Ensure back-end infrastructure exists
