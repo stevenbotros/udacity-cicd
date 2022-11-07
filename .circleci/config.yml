@@ -133,7 +133,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install tar 
+          name: Install tar
           command:
             yum install -y tar gzip
 
