@@ -111,10 +111,10 @@ jobs:
           name: front-end scan
           command: |
             cd frontend
-            sudo npm install npm@latest -g
             npm audit fix --force 
             npm audit fix --force --audit-level=critical
             npm audit --audit-level=critical
+          #sudo npm install npm@latest -g
 
   scan-backend:
     docker:
