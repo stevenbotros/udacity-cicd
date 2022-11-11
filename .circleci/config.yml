@@ -98,7 +98,7 @@ jobs:
             npm install
             npm test
 
-            sudo npm install npm@latest -g
+          # sudo npm install npm@latest -g
 
   scan-frontend:
     docker:
@@ -111,6 +111,7 @@ jobs:
           name: front-end scan
           command: |
             cd frontend
+            sudo npm install
             npm audit fix --force 
             npm audit fix --force --audit-level=critical
             npm audit --audit-level=critical
