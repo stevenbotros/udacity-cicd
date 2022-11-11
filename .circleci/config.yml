@@ -185,6 +185,7 @@ jobs:
       - run:
           name: install ansible
           command:
+            apt-get install python3-pip
             sudo python3 -m pip install --user ansible
       - add_ssh_keys:
           fingerprints: ["<58:96:89:52:19:d8:ed:3b:df:b4:95:43:29:0f:39:2a"]
