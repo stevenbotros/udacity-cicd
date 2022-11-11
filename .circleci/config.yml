@@ -184,7 +184,7 @@ jobs:
       - checkout
       - run:
           name: install ansible
-          command:
+          command: |
             apt-get install python3-pip
             sudo python3 -m pip install --user ansible
       - add_ssh_keys:
