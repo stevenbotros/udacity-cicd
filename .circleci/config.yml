@@ -159,10 +159,10 @@ jobs:
     steps:
       - checkout
       - install_awscli
-      - run:
-          name: Install tar
-          command:
-            npm install -y tar gzip
+      # - run:
+      #     name: Install tar
+      #     command:
+      #       npm install -y tar gzip
             
 
       - run:
