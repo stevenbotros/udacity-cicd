@@ -16,6 +16,7 @@ commands:
             aws s3 rm s3:udapeople-<<parameters.WORKFLOW_ID>> --recursive
             aws cloudformation delete-stack --stack-name udapeople-frontend-<< parameters.WORKFLOW_ID >>
   
+
   install_awscli:
     description: Install AWS CLI v2
     steps:
@@ -219,7 +220,6 @@ jobs:
       - run:
           name: Configure Server
           command: |
-
             cd .circleci/ansible
             cat inventory.txt
             ansible-playbook -i inventory.txt configure-server.yml
