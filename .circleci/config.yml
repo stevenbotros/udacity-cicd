@@ -15,6 +15,25 @@ commands:
             aws cloudformation delete-stack --stack-name udapeople-backend-<< parameters.WORKFLOW_ID >>
             aws s3 rm s3:udapeople-<<parameters.WORKFLOW_ID>> --recursive
             aws cloudformation delete-stack --stack-name udapeople-frontend-<< parameters.WORKFLOW_ID >>
+  
+  install_awscli:
+    description: Install AWS CLI v2
+    steps:
+      - run:
+          name: Install AWS CLI v2
+          command: |
+            curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+            unzip awscliv2.zip
+            sudo ./aws/install
+
+
+  install_ansible:
+    description: Install Ansible
+    steps:
+      - run:
+          name: Install Ansible
+          command: |
+            python3 -m pip install --user ansible
 
 #   revert-migrations:
 #     description: Revert the last migration if successfully run in the current workflow.
@@ -135,9 +154,10 @@ jobs:
 
   deploy-infrastructure:
     docker:
-      - image: amazon/aws-cli
+      - image: cimg/base:stable
     steps:
       - checkout
+      - install_awscli
       - run:
           name: Install tar
           command:
@@ -184,12 +204,13 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
-      - run:
-          name: install ansible
-          command: |
-            sudo apt-get install python3-pip
-            sudo python3 -m pip install --user ansible
-            ansible --version
+      - install_ansible
+      # - run:
+      #     name: install ansible
+      #     command: |
+      #       sudo apt-get install python3-pip
+      #       sudo python3 -m pip install --user ansible
+      #       ansible --version
 
       - add_ssh_keys:
           fingerprints: ["<58:96:89:52:19:d8:ed:3b:df:b4:95:43:29:0f:39:2a"]
