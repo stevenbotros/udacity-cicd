@@ -43,8 +43,11 @@ commands:
       - run:
           name: Install node.js 13
           command: |
-            curl -fsSL https://deb.nodesource.com/setup_13.x | sudo -E bash - 
-            sudo apt install -y node.js
+            sudo curl -LO https://nodejs.org/dist/v18.0.0/node-v18.0.0-linux-x64.tar.xz
+            sudo tar -xvf node-v18.0.0-linux-x64.tar.xz
+            sudo cp -r node-v18.0.0-linux-x64/{bin,include,lib,share} /usr/
+          # curl -fsSL https://deb.nodesource.com/setup_13.x | sudo -E bash - 
+            # sudo apt install -y node.js
 
   revert-migrations:
     description: Revert the last migration if successfully run in the current workflow.
