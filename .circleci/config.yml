@@ -244,8 +244,6 @@ jobs:
       
       - destroy-environment
 
-
-
   run-migrations:
     docker:
       - image: cimg/python:3.10
@@ -323,7 +321,7 @@ jobs:
               npm install
         - run:
             name: Package backend
-            command: 
+            command: |
               cd backend
               npm run build
               tar -czf artifact.tar.gz dist/* package*
