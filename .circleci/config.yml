@@ -43,9 +43,8 @@ commands:
       - run:
           name: Install node.js 13
           command: |
-            sudo curl -LO https://nodejs.org/dist/v13.8.0/node-v13.8.0-linux-x64.tar.xz
-            sudo tar -xvf node-v13.8.0-linux-x64.tar.xz
-            sudo cp -r node-v13.8.0-linux-x64/{bin,include,lib,share} /usr/
+            curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+            sudo apt-get install -y nodejs
           # curl -fsSL https://deb.nodesource.com/setup_13.x | sudo -E bash - 
           # sudo apt install -y node.js
           # https://github.com/nodesource/distributions/issues/1379
@@ -339,12 +338,12 @@ jobs:
 
               cd .circleci/ansible
               cat inventory.txt
-              ansible all --list-hosts
               ansible-playbook -i inventory.txt deploy-backend.yml
 
         - destroy-environment
         - revert-migrations
 
+    # ansible all --list-hosts
 
 
 #   smoke-test:
