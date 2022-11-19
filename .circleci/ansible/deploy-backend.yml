@@ -1,5 +1,6 @@
 ---
-- name: "configuration play."
+
+- name: "configuration play"
   hosts: web
   user: ubuntu
   gather_facts: false
@@ -20,6 +21,6 @@
   TYPEORM_USERNAME: "{{ lookup('env', 'TYPEORM_USERNAME') }}"
   TYPEORM_PASSWORD: "{{ lookup('env', 'TYPEORM_PASSWORD') }}"
   TYPEORM_DATABASE: "{{ lookup('env', 'TYPEORM_DATABASE') }}"
-  
+
   roles:
     - deploy
