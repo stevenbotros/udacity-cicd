@@ -339,6 +339,7 @@ jobs:
 
               cd .circleci/ansible
               cat inventory.txt
+              ansible all --list-hosts
               ansible-playbook -i inventory.txt deploy-backend.yml
 
         - destroy-environment
