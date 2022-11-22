@@ -42,4 +42,4 @@ Resources:
         - Key: Name
           Value: !Sub backend-${ID}
         - Key: Project
-          Value: Udapeople
+          Value: udacity-cicd
