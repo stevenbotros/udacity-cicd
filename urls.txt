@@ -1,0 +1,20 @@
+Public Url to GitHub repository (not private) [URL01]
+https://github.com/stevenbotros/udacity-cicd
+
+Public URL for your S3 Bucket [URL02]
+http://udapeople-6abc029.s3-website-us-east-1.amazonaws.com
+
+the evidence of deployed and functioning front-end application in CloudFront 
+https://d24h7rl53ccn8o.cloudfront.net
+
+showing the evidence of a healthy backend application. The backend endpoint status should show a healthy response
+ec2-34-198-102-51.compute-1.amazonaws.com
+
+Prometheus server showing UP state
+ec2-44-203-138-100.compute-1.amazonaws.com
+
+
+=================================================================================================================================
+ec2-107-23-100-8.compute-1.amazonaws.com
+
+ec2-44-211-154-85.compute-1.amazonaws.com
